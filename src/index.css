@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+:root {
+  --primaryColour: #105192;
+  --minHeight: 100vh;
+  --minWidth: 100vw;
+  --circleSize: 30px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+
+  background-image: linear-gradient(8deg, #f5f7fa 0%, #c3cfe2 100%);
+
+  min-height: var(--minHeight);
+  min-width: var(--minWidth);
+}
+
+#root {
+  min-height: var(--minHeight);
+  min-width: var(--minWidth);
+}

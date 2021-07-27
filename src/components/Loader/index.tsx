@@ -1,15 +1,21 @@
 import { FC } from "react";
-import { Spinner } from "reactstrap";
+import "./style.css";
 
 interface IProps {
   readonly loading: boolean;
 }
 
+const CustomLoader: JSX.Element = (
+  <div className="loader">
+    <div className="loading-container">
+      <div className="circle" />
+      <div className="circle" />
+      <div className="circle" />
+    </div>
+  </div>
+);
+
 const Loader: FC<IProps> = ({ children, loading }) =>
-  loading ? (
-    <Spinner style={{ width: "3rem", height: "3rem" }} type="grow" />
-  ) : (
-    <>{children}</>
-  );
+  loading ? CustomLoader : <>{children}</>;
 
 export default Loader;
