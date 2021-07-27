@@ -2,6 +2,7 @@
 
 :root {
   --primaryColour: #105192;
+  --secondaryColour: #1566b6;
   --minHeight: 100vh;
   --minWidth: 100vw;
   --circleSize: 30px;
@@ -24,4 +25,16 @@ body {
 #root {
   min-height: var(--minHeight);
   min-width: var(--minWidth);
+}
+
+.button {
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  background-color: var(--primaryColour);
+  color: #fff;
+}
+
+.button:hover {
+  background-color: var(--secondaryColour);
 }

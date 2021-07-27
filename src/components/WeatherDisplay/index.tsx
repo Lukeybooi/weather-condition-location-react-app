@@ -1,43 +1,25 @@
 import { FC } from "react";
-import {
-  Button,
-  Card,
-  CardBody,
-  CardImg,
-  CardSubtitle,
-  CardText,
-  CardTitle,
-} from "reactstrap";
 import { Weather } from "../../models/weather";
+import MainDisplay from "./mainDisplay";
+import "./style.css";
 
-interface IProps {
+export interface IWeatherDisplayProps {
   readonly data: Weather;
   readonly onRefresh: () => void;
 }
 
-const WeatherDisplay: FC<IProps> = ({ data, onRefresh }) => (
-  <Card>
-    <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
-    <CardBody>
-      <CardTitle tag="h5">Card title</CardTitle>
-      <CardSubtitle tag="h6" className="mb-2 text-muted">
-        <p>
-          Feels like {data?.main?.feels_like}°C.{" "}
-          {data?.weather?.[0]?.description}. {data?.weather?.[0]?.main}
-        </p>
-      </CardSubtitle>
-      <CardText>
-        <p>Humidity: {data?.main?.humidity} %</p>
-
-        <p>Pressure: {data?.weather?.[0]?.description} hPa</p>
-
-        <p>Visibility: {data?.visibility / 1000} km</p>
-
-        <p>Wind: {data?.wind?.speed} meter/sec</p>
-      </CardText>
-      <Button onClick={onRefresh}>Refresh</Button>
-    </CardBody>
-  </Card>
+const WeatherDisplay: FC<IWeatherDisplayProps> = ({ data, onRefresh }) => (
+  <div className="container">
+    <div className="display-wrapper">
+      <MainDisplay data={data} onRefresh={onRefresh} />
+      <img
+        src="https://i.pinimg.com/originals/77/0b/80/770b805d5c99c7931366c2e84e88f251.png"
+        alt="https://static.thenounproject.com/png/967229-200.png"
+        width={100}
+        height={100}
+      />
+    </div>
+  </div>
 );
 
 export default WeatherDisplay;

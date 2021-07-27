@@ -32,3 +32,19 @@ export const GENERAL_ERROR =
 
 export const LOCATION_ERR_MSG =
   "Unable to get geolocation, please try again later.";
+
+export const divideBy = (num: number | string, divisibleBy: number) => {
+  try {
+    let value = 0;
+
+    if (typeof num === "number") {
+      value = num;
+    } else if (typeof num === "string") {
+      value = parseInt(num);
+    }
+
+    return (value / divisibleBy).toFixed(2);
+  } catch (error) {
+    return 0;
+  }
+};
