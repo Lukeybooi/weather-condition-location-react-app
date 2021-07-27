@@ -1,6 +1,5 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { useState } from "react";
-import { Button } from "reactstrap";
 import ErrorAlert from "./components/ErrorAlerts/indext";
 import Loader from "./components/Loader";
 import RequestLocationModal from "./components/RequestLocationModal";
@@ -96,13 +95,6 @@ const App = () => {
       isDenied: true,
     }));
 
-  // TOGGLE Modal Visibility
-  const onToggle = () =>
-    setState(({ showRequest, ...r }) => ({
-      ...r,
-      showRequest: !showRequest,
-    }));
-
   // GENERAL Error Function
   const setError = (key: keyof IErrorProps, message: string) =>
     setState((s) => ({
@@ -121,11 +113,14 @@ const App = () => {
         show={showRequest}
         onAllow={onFindLocation}
         onDeny={onDeny}
-        onToggle={onToggle}
       />
 
       {data && <WeatherDisplay data={data} onRefresh={onFindLocation} />}
-      {isDenied && !data && <Button onClick={onFindLocation}>Refresh</Button>}
+      {isDenied && !data && (
+        <button className="button" onClick={onFindLocation}>
+          Refresh
+        </button>
+      )}
     </Loader>
   );
 };
