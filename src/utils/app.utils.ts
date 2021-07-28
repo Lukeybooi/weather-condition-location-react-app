@@ -64,7 +64,9 @@ export const divideBy = (num: number | string, divisibleBy: number) => {
       value = parseInt(num);
     }
 
-    return (value / divisibleBy).toFixed(2);
+    const division = (value / divisibleBy).toFixed(2);
+
+    return isNaN(parseInt(division)) ? 0 : parseFloat(division);
   } catch (error) {
     return 0;
   }
