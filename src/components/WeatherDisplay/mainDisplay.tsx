@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { IWeatherDisplayProps } from ".";
+import { capitalize } from "../../utils/app.utils";
 
 const MainDisplay: FC<IWeatherDisplayProps> = ({ data, onRefresh }) => (
   <div className="main-display">
@@ -29,7 +30,7 @@ const MainDisplay: FC<IWeatherDisplayProps> = ({ data, onRefresh }) => (
       </div>
 
       <div className="main-display-description">
-        {data?.weather?.[0]?.description}
+        {capitalize(data?.weather?.[0]?.description as string)}
       </div>
 
       <span className="main-display-meta-data">Feels like</span>

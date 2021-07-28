@@ -33,6 +33,14 @@ export const GENERAL_ERROR =
 export const LOCATION_ERR_MSG =
   "Unable to get geolocation, please try again later.";
 
+export const capitalize = (str: string) => {
+  if (!str) return "";
+  return str.replace(
+    /\w\S*/g,
+    (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+  );
+};
+
 export const divideBy = (num: number | string, divisibleBy: number) => {
   try {
     let value = 0;
