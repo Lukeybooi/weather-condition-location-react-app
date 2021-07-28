@@ -3,6 +3,7 @@ import { useState } from "react";
 import ErrorAlert from "./components/ErrorAlerts/indext";
 import Loader from "./components/Loader";
 import RequestLocationModal from "./components/RequestLocationModal";
+import RetryButton from "./components/RetryButton";
 import WeatherDisplay from "./components/WeatherDisplay";
 import { WEATHER_URL } from "./constants";
 import { Weather } from "./models/weather";
@@ -116,11 +117,8 @@ const App = () => {
       />
 
       {data && <WeatherDisplay data={data} onRefresh={onFindLocation} />}
-      {isDenied && !data && (
-        <button className="button" onClick={onFindLocation}>
-          Refresh
-        </button>
-      )}
+
+      {isDenied && !data && <RetryButton onClick={onFindLocation} />}
     </Loader>
   );
 };

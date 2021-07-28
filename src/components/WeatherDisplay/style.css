@@ -1,35 +1,94 @@
-.container {
-  width: 80%;
-  padding-top: 100px;
-  margin: 0 auto;
-}
-
-.display-wrapper {
+.main-layout {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  padding: 5% 10%;
 }
 
-.display-main > .display-name {
-  color: #5a5a5a;
-  padding-bottom: 12px;
+/* Main Display */
+.main-display-title {
+  display: flex;
+  color: #fff;
+  padding-bottom: 16px;
+  font-size: 34px;
 }
 
-.display-main > .displate-temp > h2 {
-  color: #282828;
-  padding-bottom: 6px;
+.main-display-title .main-display-img {
+  margin-left: 8px;
 }
 
-.display-main > .displate-temp > h4 {
-  font-size: 12px;
-  color: #4d4d4d;
-}
-
-.display-main > .displate-temp > h4:last-child {
-  border-bottom: 1px solid #888888;
-  padding-bottom: 12px;
-}
-
-.display-main .display-btn {
+.main-display-btn {
   margin-top: 6px;
+  background: var(--primaryColour);
+  border: none;
+  width: 250px;
+  padding: 12px 0;
+  margin: 16px 0;
+  color: #fff;
+  border-radius: 4px;
   cursor: pointer;
+}
+
+.main-display-temperature .main-display-bold {
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  font-size: 30px;
+}
+
+.main-display-temperature .main-display-meta-data {
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.main-display-temperature .main-display-description {
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  font-size: 22px;
+}
+
+/* Side Display */
+.side-display {
+  background: rgba(10, 10, 10, 0.2);
+  border-radius: 2px;
+  padding: 1% 5% 5% 5%;
+}
+
+.side-display .side-display-img {
+  display: flex;
+  justify-content: center;
+  padding: 6px;
+}
+
+.side-display-un-list .side-display-li-list {
+  list-style-type: none;
+}
+
+.side-display-un-list .side-display-li-list .side-display-list-content-main {
+  color: #fff;
+  padding: 12px 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+.side-display-un-list .side-display-li-list .side-display-list-content {
+  border-bottom: 2px solid #ffffff;
+  color: #fff;
+  padding: 12px 0;
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .main-display {
+    margin-bottom: 18px;
+  }
+
+  .main-display-btn {
+    width: 100%;
+  }
 }

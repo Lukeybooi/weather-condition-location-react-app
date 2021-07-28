@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { Alert } from "reactstrap";
 import { IErrorProps } from "../../utils/app.utils";
+import Alert from "../Alert";
 
 interface IProps {
   readonly errors: IErrorProps;
@@ -12,9 +12,7 @@ const ErrorAlert: FC<IProps> = ({ errors }) => {
   return (
     <>
       {err.map((msg) => (
-        <Alert key={msg} color="danger">
-          {msg}
-        </Alert>
+        <Alert key={msg} message={msg} type="error" theme="light" />
       ))}
     </>
   );

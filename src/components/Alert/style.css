@@ -1,0 +1,36 @@
+.alert-main {
+  text-align: center;
+  font-size: 26px;
+  border-radius: 5px;
+  padding: 16px;
+}
+
+.alert-main-info {
+  color: #0099cc;
+}
+
+.alert-main-success {
+  color: #007e33;
+}
+
+.alert-main-error {
+  color: #cc0000;
+}
+
+.alert-main-warning {
+  color: #ff8800;
+}
+
+.alert-main-dark {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.alert-main-light {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+@media only screen and (max-width: 1000px) {
+  .alert-main {
+    font-size: 18px;
+  }
+}

@@ -1,29 +1,43 @@
 import { FC } from "react";
 import { IWeatherDisplayProps } from ".";
-import { divideBy } from "../../utils/app.utils";
 
 const MainDisplay: FC<IWeatherDisplayProps> = ({ data, onRefresh }) => (
-  <div className="display-main">
-    <div className="display-name">
-      <h1>
+  <div className="main-display">
+    <div className="main-display-title">
+      <div>
         {data.name}, {data?.sys?.country}
-      </h1>
+      </div>
+
+      <div className="main-display-img">
+        <img
+          src="https://i.pinimg.com/originals/77/0b/80/770b805d5c99c7931366c2e84e88f251.png"
+          alt="https://static.thenounproject.com/png/967229-200.png"
+          width={40}
+          height={40}
+        />
+      </div>
     </div>
 
-    <div className="displate-temp">
-      <h2>{data?.main?.temp} °C</h2>
-      <h3>
-        Feels like {data?.main?.feels_like} °C.{" "}
-        {data?.weather?.[0]?.description}
-      </h3>
-      <h4>Humidity: {data?.main?.humidity} %</h4>
-      <h4>Pressure: {data?.main?.pressure} hPa</h4>
-      <h4>Wind: {data?.wind?.speed} meter/sec</h4>
-      <h4>Visibility: {divideBy(data?.visibility, 1000)} km</h4>
-    </div>
-    <button className="button display-btn" onClick={onRefresh}>
-      Refresh
+    <button className="main-display-btn" onClick={onRefresh}>
+      Reload Weather Results
     </button>
+
+    <div className="main-display-temperature">
+      <span className="main-display-meta-data">Current</span>
+      <div className="main-display-bold">
+        {data?.main?.temp} <sup>°C</sup>
+      </div>
+
+      <div className="main-display-description">
+        {data?.weather?.[0]?.description}
+      </div>
+
+      <span className="main-display-meta-data">Feels like</span>
+
+      <div className="main-display-bold">
+        {data?.main?.feels_like} <sup>°C</sup>
+      </div>
+    </div>
   </div>
 );
 

@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Weather } from "../../models/weather";
 import MainDisplay from "./mainDisplay";
+import SideDisplay from "./sideDisplay";
 import "./style.css";
 
 export interface IWeatherDisplayProps {
@@ -10,14 +11,9 @@ export interface IWeatherDisplayProps {
 
 const WeatherDisplay: FC<IWeatherDisplayProps> = ({ data, onRefresh }) => (
   <div className="container">
-    <div className="display-wrapper">
+    <div className="main-layout">
       <MainDisplay data={data} onRefresh={onRefresh} />
-      <img
-        src="https://i.pinimg.com/originals/77/0b/80/770b805d5c99c7931366c2e84e88f251.png"
-        alt="https://static.thenounproject.com/png/967229-200.png"
-        width={100}
-        height={100}
-      />
+      <SideDisplay data={data} />
     </div>
   </div>
 );

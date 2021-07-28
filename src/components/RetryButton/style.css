@@ -1,0 +1,18 @@
+.retry-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.retry-btn button {
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  background-color: var(--primaryColour);
+  width: 300px;
+  color: #fff;
+}
+
+.retry-btn:hover button {
+  background-color: var(--secondaryColour);
+}

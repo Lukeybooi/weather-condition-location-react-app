@@ -7,11 +7,7 @@ interface IProps {
 
 const CustomLoader: JSX.Element = (
   <div className="loader">
-    <div className="loading-container">
-      <div className="circle" />
-      <div className="circle" />
-      <div className="circle" />
-    </div>
+    <div className="loading-container" />
   </div>
 );
 
