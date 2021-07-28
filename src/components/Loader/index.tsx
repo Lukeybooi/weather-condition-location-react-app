@@ -1,17 +1,15 @@
 import { FC } from "react";
+import { TEST_LOADER_ID } from "../../constants";
+import { ILoaderProps } from "../../models";
 import "./loader.css";
 
-interface IProps {
-  readonly loading: boolean;
-}
-
 const CustomLoader: JSX.Element = (
-  <div className="loader">
+  <div data-testid={TEST_LOADER_ID} className="loader">
     <div className="loading-container" />
   </div>
 );
 
-const Loader: FC<IProps> = ({ children, loading }) =>
+const Loader: FC<ILoaderProps> = ({ children, loading }) =>
   loading ? CustomLoader : <>{children}</>;
 
 export default Loader;

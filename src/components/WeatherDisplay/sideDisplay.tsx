@@ -1,13 +1,10 @@
 import { FC } from "react";
-import { Weather } from "../../models/weather";
+import { TEST_WEATHER_SIDE_DISPLAY_ID } from "../../constants";
+import { ISideDisplayProps } from "../../models/sideDisplayProps";
 import { divideBy } from "../../utils/app.utils";
 
-interface IProps {
-  readonly data: Weather;
-}
-
-const SideDisplay: FC<IProps> = ({ data }) => (
-  <div className="side-display">
+const SideDisplay: FC<ISideDisplayProps> = ({ data }) => (
+  <div data-testid={TEST_WEATHER_SIDE_DISPLAY_ID} className="side-display">
     <ul className="side-display-un-list">
       <li className="side-display-li-list">
         <div className="side-display-list-content-main">

@@ -1,18 +1,31 @@
-import { Weather } from "../models/weather";
+import { IStateProps, Weather } from "../models";
 
-export interface IStateProps {
-  readonly showRequest: boolean;
-  readonly data?: Weather;
-  readonly loading: boolean;
-  readonly isDenied: boolean;
-  readonly error: IErrorProps;
-}
-
-export interface IErrorProps {
-  readonly generalError?: string | null;
-  readonly locationError?: string | null;
-  readonly callError?: string | null;
-}
+export const DUMMY_WEATHER_DATA: Weather = {
+  coord: { lon: 28.0473, lat: 26.2041 },
+  weather: [
+    { id: 802, main: "Clouds", description: "scattered clouds", icon: "03n" },
+  ],
+  base: "stations",
+  main: {
+    temp: 27.94,
+    feels_like: 26.73,
+    temp_min: 27.94,
+    temp_max: 27.94,
+    pressure: 1010,
+    humidity: 21,
+    sea_level: 1010,
+    grnd_level: 963,
+  },
+  visibility: 10000,
+  wind: { speed: 4.13, deg: 3, gust: 4.54 },
+  clouds: { all: 33 },
+  dt: 1627505996,
+  sys: { country: "EG", sunrise: 1627443077, sunset: 1627491425 },
+  timezone: 7200,
+  id: 350661,
+  name: "Qaşr al Farāfirah",
+  cod: 200,
+};
 
 export const INIT_STATE: IStateProps = {
   showRequest: true,

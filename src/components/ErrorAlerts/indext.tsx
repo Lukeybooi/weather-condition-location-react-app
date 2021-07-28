@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { IErrorProps } from "../../utils/app.utils";
+import { IErrorProps } from "../../models";
 import Alert from "../Alert";
 
 interface IProps {

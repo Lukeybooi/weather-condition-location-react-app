@@ -1,14 +1,11 @@
 import { FC } from "react";
-import { DENY_ERR_MSG } from "../../constants";
+import { DENY_ERR_MSG, TEST_RETRY_BTN_ID } from "../../constants";
+import { IRetryOptionProps } from "../../models";
 import Alert from "../Alert";
 import "./retryButton.css";
 
-interface IProps {
-  readonly onClick: () => void;
-}
-
-const RetryButton: FC<IProps> = ({ onClick }) => (
-  <div className="container">
+const RetryButton: FC<IRetryOptionProps> = ({ onClick }) => (
+  <div data-testid={TEST_RETRY_BTN_ID} className="container">
     <div className="main-layout">
       <div className="retry-main">
         <Alert message={DENY_ERR_MSG} type="warning" />

@@ -6,12 +6,11 @@ import RequestLocationModal from "./components/RequestLocationModal";
 import RetryButton from "./components/RetryButton";
 import WeatherDisplay from "./components/WeatherDisplay";
 import { WEATHER_URL } from "./constants";
-import { Weather } from "./models/weather";
+import { IErrorProps, Weather } from "./models";
 import {
   BLOCK_LOCATION_ERR_MSG,
   CALL_ERR_MSG,
   GENERAL_ERROR,
-  IErrorProps,
   INIT_STATE,
   LOCATION_ERR_MSG,
 } from "./utils/app.utils";

@@ -1,18 +1,13 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
+import { TEST_ALERT_ID } from "../../constants";
+import { IAlertProps } from "../../models";
 import "./alert.css";
 
-type AlertType = "info" | "success" | "error" | "warning";
-
-type ThemeType = "dark" | "light";
-
-interface IProps {
-  readonly message: string | ReactNode;
-  readonly type: AlertType;
-  readonly theme?: ThemeType;
-}
-
-const Alert: FC<IProps> = ({ message, type, theme = "dark" }) => (
-  <div className={`alert-main alert-main-${type} alert-main-${theme}`}>
+const Alert: FC<IAlertProps> = ({ message, type, theme = "dark" }) => (
+  <div
+    data-testid={TEST_ALERT_ID}
+    className={`alert-main alert-main-${type} alert-main-${theme}`}
+  >
     {message}
   </div>
 );

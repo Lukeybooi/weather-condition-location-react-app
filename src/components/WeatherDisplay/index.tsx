@@ -1,16 +1,12 @@
 import { FC } from "react";
-import { Weather } from "../../models/weather";
+import { TEST_WEATHER_DISPLAY_ID } from "../../constants";
+import { IWeatherDisplayProps } from "../../models";
 import MainDisplay from "./mainDisplay";
 import SideDisplay from "./sideDisplay";
 import "./weatherDisplay.css";
 
-export interface IWeatherDisplayProps {
-  readonly data: Weather;
-  readonly onRefresh: () => void;
-}
-
 const WeatherDisplay: FC<IWeatherDisplayProps> = ({ data, onRefresh }) => (
-  <div className="container">
+  <div data-testid={TEST_WEATHER_DISPLAY_ID} className="container">
     <div className="main-layout">
       <MainDisplay data={data} onRefresh={onRefresh} />
       <SideDisplay data={data} />

@@ -1,9 +1,10 @@
 import { FC } from "react";
-import { IWeatherDisplayProps } from ".";
+import { TEST_WEATHER_MAIN_DISPLAY_ID } from "../../constants";
+import { IWeatherDisplayProps } from "../../models";
 import { capitalize } from "../../utils/app.utils";
 
 const MainDisplay: FC<IWeatherDisplayProps> = ({ data, onRefresh }) => (
-  <div className="main-display">
+  <div data-testid={TEST_WEATHER_MAIN_DISPLAY_ID} className="main-display">
     <div className="main-display-title">
       <div>
         {data.name}, {data?.sys?.country}

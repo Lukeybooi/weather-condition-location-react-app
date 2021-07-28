@@ -1,15 +1,15 @@
 import { FC } from "react";
+import { TEST_LOCATION_MODAL_ID } from "../../constants";
+import { ILocationModalProps } from "../../models";
 import "./requestLocationMoal.css";
-
-interface IProps {
-  readonly show: boolean;
-  readonly onAllow: () => void;
-  readonly onDeny: () => void;
-}
 
 const BG_ID = "bg-modal";
 
-const RequestLocationModal: FC<IProps> = ({ show, onAllow, onDeny }) => {
+const RequestLocationModal: FC<ILocationModalProps> = ({
+  show,
+  onAllow,
+  onDeny,
+}) => {
   const onToggleModal = () => {
     window.onclick = function (event) {
       if ((event.target as any).id === BG_ID) {
@@ -19,7 +19,12 @@ const RequestLocationModal: FC<IProps> = ({ show, onAllow, onDeny }) => {
   };
 
   return show ? (
-    <div id={BG_ID} className="modal" onClick={onToggleModal}>
+    <div
+      id={BG_ID}
+      data-testid={TEST_LOCATION_MODAL_ID}
+      className="modal"
+      onClick={onToggleModal}
+    >
       <div className="modal-content">
         <span className="modal-close" onClick={onDeny}>
           &times;
