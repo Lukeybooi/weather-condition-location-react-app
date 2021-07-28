@@ -51,7 +51,10 @@ const App = () => {
   // CALL (Openweathermap) Api with Axios
   const onGetWeather = (lat: number, lon: number) => {
     if (typeof lat === "number" && typeof lon === "number") {
-      const weatherApiInstance = axios.create({ baseURL: WEATHER_URL });
+      const weatherApiInstance = axios.create({
+        baseURL: WEATHER_URL,
+        timeout: 10000,
+      });
 
       setState((s) => ({ ...s, loading: true, showRequest: false }));
 
