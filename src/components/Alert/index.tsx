@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import "./style.css";
+import "./alert.css";
 
 type AlertType = "info" | "success" | "error" | "warning";
 

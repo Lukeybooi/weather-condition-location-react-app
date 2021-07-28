@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { DENY_ERR_MSG } from "../../constants";
 import Alert from "../Alert";
-import "./style.css";
+import "./retryButton.css";
 
 interface IProps {
   readonly onClick: () => void;

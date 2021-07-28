@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Weather } from "../../models/weather";
 import MainDisplay from "./mainDisplay";
 import SideDisplay from "./sideDisplay";
-import "./style.css";
+import "./weatherDisplay.css";
 
 export interface IWeatherDisplayProps {
   readonly data: Weather;

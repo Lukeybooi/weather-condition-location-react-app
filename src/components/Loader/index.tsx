@@ -1,5 +1,5 @@
 import { FC } from "react";
-import "./style.css";
+import "./loader.css";
 
 interface IProps {
   readonly loading: boolean;

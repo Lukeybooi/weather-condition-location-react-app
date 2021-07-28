@@ -1,5 +1,5 @@
 import { FC } from "react";
-import "./style.css";
+import "./requestLocationMoal.css";
 
 interface IProps {
   readonly show: boolean;
